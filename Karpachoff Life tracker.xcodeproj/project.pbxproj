@@ -13,6 +13,9 @@
 		13CB88CB1FDBF9C8001D67B2 /* Karpachoff_Life_tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13CB88C91FDBF9C8001D67B2 /* Karpachoff_Life_tracker.xcdatamodeld */; };
 		13CB88CD1FDBF9C8001D67B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CB88CC1FDBF9C8001D67B2 /* Assets.xcassets */; };
 		13CB88D01FDBF9C8001D67B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13CB88CE1FDBF9C8001D67B2 /* LaunchScreen.storyboard */; };
+		13CB88D81FDC00B7001D67B2 /* TrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB88D71FDC00B7001D67B2 /* TrackerCell.swift */; };
+		13E3C91C1FDEBC34005F2160 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E3C91B1FDEBC34005F2160 /* CalendarCell.swift */; };
+		6D03163A8EA14E4DEAAD1FF4 /* Pods_Karpachoff_Life_tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E402655FD84F809604BD48A /* Pods_Karpachoff_Life_tracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		13CB88CC1FDBF9C8001D67B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13CB88CF1FDBF9C8001D67B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13CB88D11FDBF9C8001D67B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13CB88D71FDC00B7001D67B2 /* TrackerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerCell.swift; sourceTree = "<group>"; };
+		13E3C91B1FDEBC34005F2160 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		64F3E345626F867228D83A1C /* Pods-Karpachoff Life tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karpachoff Life tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Karpachoff Life tracker/Pods-Karpachoff Life tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		81C61E4BD7800B627704B682 /* Pods-Karpachoff Life tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karpachoff Life tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Karpachoff Life tracker/Pods-Karpachoff Life tracker.release.xcconfig"; sourceTree = "<group>"; };
+		9E402655FD84F809604BD48A /* Pods_Karpachoff_Life_tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Karpachoff_Life_tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D03163A8EA14E4DEAAD1FF4 /* Pods_Karpachoff_Life_tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1369BB4A1FDDA01700286A90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13CB88C91FDBF9C8001D67B2 /* Karpachoff_Life_tracker.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1369BB4B1FDDA02600286A90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13CB88D71FDC00B7001D67B2 /* TrackerCell.swift */,
+				13E3C91B1FDEBC34005F2160 /* CalendarCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1369BB4C1FDDA03400286A90 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13CB88C41FDBF9C8001D67B2 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		13CB88B61FDBF9C7001D67B2 = {
 			isa = PBXGroup;
 			children = (
 				13CB88C11FDBF9C7001D67B2 /* Karpachoff Life tracker */,
 				13CB88C01FDBF9C7001D67B2 /* Products */,
+				1C9AADBC1A26AAB7985539F1 /* Pods */,
+				A833A9886FCCCFB63F3F8EAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +92,33 @@
 		13CB88C11FDBF9C7001D67B2 /* Karpachoff Life tracker */ = {
 			isa = PBXGroup;
 			children = (
+				1369BB4C1FDDA03400286A90 /* Controller */,
+				1369BB4B1FDDA02600286A90 /* View */,
+				1369BB4A1FDDA01700286A90 /* Model */,
 				13CB88C21FDBF9C8001D67B2 /* AppDelegate.swift */,
-				13CB88C41FDBF9C8001D67B2 /* ViewController.swift */,
 				13CB88C61FDBF9C8001D67B2 /* Main.storyboard */,
 				13CB88CC1FDBF9C8001D67B2 /* Assets.xcassets */,
 				13CB88CE1FDBF9C8001D67B2 /* LaunchScreen.storyboard */,
 				13CB88D11FDBF9C8001D67B2 /* Info.plist */,
-				13CB88C91FDBF9C8001D67B2 /* Karpachoff_Life_tracker.xcdatamodeld */,
 			);
 			path = "Karpachoff Life tracker";
+			sourceTree = "<group>";
+		};
+		1C9AADBC1A26AAB7985539F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64F3E345626F867228D83A1C /* Pods-Karpachoff Life tracker.debug.xcconfig */,
+				81C61E4BD7800B627704B682 /* Pods-Karpachoff Life tracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A833A9886FCCCFB63F3F8EAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E402655FD84F809604BD48A /* Pods_Karpachoff_Life_tracker.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13CB88D41FDBF9C8001D67B2 /* Build configuration list for PBXNativeTarget "Karpachoff Life tracker" */;
 			buildPhases = (
+				82A8E2597FFF6A49D12CBB4C /* [CP] Check Pods Manifest.lock */,
 				13CB88BB1FDBF9C7001D67B2 /* Sources */,
 				13CB88BC1FDBF9C7001D67B2 /* Frameworks */,
 				13CB88BD1FDBF9C7001D67B2 /* Resources */,
+				43F3EB7FD3B1538749EA2D67 /* [CP] Embed Pods Frameworks */,
+				107FDB7C03B5D311EC56F0E2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,14 +191,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		107FDB7C03B5D311EC56F0E2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Karpachoff Life tracker/Pods-Karpachoff Life tracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43F3EB7FD3B1538749EA2D67 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Karpachoff Life tracker/Pods-Karpachoff Life tracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82A8E2597FFF6A49D12CBB4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		13CB88BB1FDBF9C7001D67B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13CB88D81FDC00B7001D67B2 /* TrackerCell.swift in Sources */,
 				13CB88CB1FDBF9C8001D67B2 /* Karpachoff_Life_tracker.xcdatamodeld in Sources */,
 				13CB88C51FDBF9C8001D67B2 /* ViewController.swift in Sources */,
 				13CB88C31FDBF9C8001D67B2 /* AppDelegate.swift in Sources */,
+				13E3C91C1FDEBC34005F2160 /* CalendarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,31 +383,35 @@
 		};
 		13CB88D51FDBF9C8001D67B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64F3E345626F867228D83A1C /* Pods-Karpachoff Life tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HSVAYED58Q;
+				DEVELOPMENT_TEAM = 3WS684W8VE;
 				INFOPLIST_FILE = "Karpachoff Life tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "minkov.dev.Karpachoff-Life-tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = "minkov.dev.karpachoff-life-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		13CB88D61FDBF9C8001D67B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81C61E4BD7800B627704B682 /* Pods-Karpachoff Life tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HSVAYED58Q;
+				DEVELOPMENT_TEAM = 3WS684W8VE;
 				INFOPLIST_FILE = "Karpachoff Life tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "minkov.dev.Karpachoff-Life-tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = "minkov.dev.karpachoff-life-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
