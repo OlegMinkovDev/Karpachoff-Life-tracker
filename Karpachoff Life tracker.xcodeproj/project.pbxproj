@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1346C5F71FE4526000FFF265 /* AddActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1346C5F61FE4525F00FFF265 /* AddActivityVC.swift */; };
+		1346C5F91FE459F300FFF265 /* OMSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1346C5F81FE459F300FFF265 /* OMSwitch.swift */; };
 		13CB88C31FDBF9C8001D67B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB88C21FDBF9C8001D67B2 /* AppDelegate.swift */; };
 		13CB88C51FDBF9C8001D67B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB88C41FDBF9C8001D67B2 /* ViewController.swift */; };
 		13CB88C81FDBF9C8001D67B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13CB88C61FDBF9C8001D67B2 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1346C5F61FE4525F00FFF265 /* AddActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityVC.swift; sourceTree = "<group>"; };
+		1346C5F81FE459F300FFF265 /* OMSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMSwitch.swift; sourceTree = "<group>"; };
 		13CB88BF1FDBF9C7001D67B2 /* Karpachoff Life tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Karpachoff Life tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13CB88C21FDBF9C8001D67B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13CB88C41FDBF9C8001D67B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 			children = (
 				13CB88D71FDC00B7001D67B2 /* TrackerCell.swift */,
 				13E3C91B1FDEBC34005F2160 /* CalendarCell.swift */,
+				1346C5F81FE459F300FFF265 /* OMSwitch.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -67,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				13CB88C41FDBF9C8001D67B2 /* ViewController.swift */,
+				1346C5F61FE4525F00FFF265 /* AddActivityVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,7 +252,9 @@
 			files = (
 				13CB88D81FDC00B7001D67B2 /* TrackerCell.swift in Sources */,
 				13CB88CB1FDBF9C8001D67B2 /* Karpachoff_Life_tracker.xcdatamodeld in Sources */,
+				1346C5F91FE459F300FFF265 /* OMSwitch.swift in Sources */,
 				13CB88C51FDBF9C8001D67B2 /* ViewController.swift in Sources */,
+				1346C5F71FE4526000FFF265 /* AddActivityVC.swift in Sources */,
 				13CB88C31FDBF9C8001D67B2 /* AppDelegate.swift in Sources */,
 				13E3C91C1FDEBC34005F2160 /* CalendarCell.swift in Sources */,
 			);

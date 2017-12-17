@@ -20,11 +20,19 @@ class TrackerCell: UITableViewCell {
     @IBOutlet weak var activityLabel: UILabel!
     @IBOutlet weak var subActivityLabel: UILabel!
     
-    func setTimeLabel(activity: Activity) {
-        let timeLabel = UILabel(frame: CGRect(x: 20, y: CGFloat(activity.position.minutes) - 8, width: 80, height: 16))
+    func setTimeLabel(y: CGFloat) {
+        let frame = CGRect(x: 8, y: y - 7.5, width: 15, height: 15)
+        
+        let imageView = UIImageView(frame: frame)
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "circle")
+        
+        addSubview(imageView)
+        
+        /*let timeLabel = UILabel(frame: CGRect(x: 20, y: CGFloat(activity.position.minutes) - 8, width: 80, height: 16))
         timeLabel.text = activity.time
         
-        addSubview(timeLabel)
+        addSubview(timeLabel)*/
     }
 
     override func awakeFromNib() {

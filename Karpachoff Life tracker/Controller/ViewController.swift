@@ -87,9 +87,9 @@ class ViewController: UIViewController, TrackerCellDelegate {
         appleCalendarView.selectDates([newDate])
     }
     
-    
-    
-    
+    @IBAction func addActivityPress(_ sender: UIButton) {
+        performSegue(withIdentifier: "toAddActivityVC", sender: self)
+    }
     
     func cellTouchesBegan(cell: TrackerCell, x: CGFloat, y: CGFloat) {
         print("\(cell.tag) hours \(Int(y)) minutes")
@@ -103,7 +103,9 @@ class ViewController: UIViewController, TrackerCellDelegate {
         
         activities[cell.tag] = activity
         
-        cell.setTimeLabel(activity: activity)
+        for i in 0 ..< 5 {
+            cell.setTimeLabel(y: CGFloat(i * 5))
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -175,11 +177,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackerCell") as! TrackerCell
         
-        /*cell.selectionStyle = .none
+        cell.selectionStyle = .none
         cell.delegate = self
         cell.tag = indexPath.row
         
-        if activities.count > 0 {
+        /*if activities.count > 0 {
             cell.setTimeLabel(activity: activities[indexPath.row])
         }*/
         
