@@ -655,11 +655,92 @@
                         <outlet property="notificationOMSwitch" destination="LBw-Qj-qak" id="dPk-md-vKT"/>
                         <outlet property="startActivityButton" destination="GSU-32-cRm" id="cFr-xd-2qL"/>
                         <outlet property="startTimeTextField" destination="Z6C-pY-rgH" id="NMv-Fl-va2"/>
+                        <segue destination="6xu-Gz-9e3" kind="presentation" identifier="toPopUpVC" id="rAe-aA-Wv3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGD-hd-gyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="931.875" y="116.19718309859155"/>
+        </scene>
+        <!--Pop UpVC-->
+        <scene sceneID="6HK-in-3IT">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="6xu-Gz-9e3" customClass="PopUpVC" customModule="Karpachoff_Life_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r2N-Gv-Y6d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDh-hL-POI">
+                                <rect key="frame" x="15" y="487" width="345" height="165"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cWv-Bg-DQK">
+                                        <rect key="frame" x="0.0" y="5" width="345" height="20.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYI-jX-ORK">
+                                                <rect key="frame" x="0.0" y="0.0" width="115" height="20.5"/>
+                                                <inset key="contentEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Отмена"/>
+                                                <connections>
+                                                    <action selector="cancelPress:" destination="6xu-Gz-9e3" eventType="touchUpInside" id="UEa-9Z-yp4"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8c-DQ-7Bd">
+                                                <rect key="frame" x="115" y="0.0" width="115" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xe0-gx-mg9">
+                                                <rect key="frame" x="230" y="0.0" width="115" height="20.5"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="7" maxY="0.0"/>
+                                                <state key="normal" title="Ок"/>
+                                                <connections>
+                                                    <action selector="donePress:" destination="6xu-Gz-9e3" eventType="touchUpInside" id="X6g-xk-PCM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="icd-hC-CQm">
+                                        <rect key="frame" x="5" y="39" width="335" height="116"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="icd-hC-CQm" secondAttribute="trailing" constant="5" id="0Xe-S9-hOD"/>
+                                    <constraint firstItem="icd-hC-CQm" firstAttribute="top" secondItem="cWv-Bg-DQK" secondAttribute="bottom" constant="13.5" id="3UF-qD-Z0J"/>
+                                    <constraint firstAttribute="bottom" secondItem="icd-hC-CQm" secondAttribute="bottom" constant="10" id="65S-ng-Yd5"/>
+                                    <constraint firstAttribute="height" constant="165" id="Oi8-zA-8dl"/>
+                                    <constraint firstItem="icd-hC-CQm" firstAttribute="leading" secondItem="iDh-hL-POI" secondAttribute="leading" constant="5" id="Q0s-m8-7Bb"/>
+                                    <constraint firstAttribute="trailing" secondItem="cWv-Bg-DQK" secondAttribute="trailing" id="iaE-tC-wEO"/>
+                                    <constraint firstItem="cWv-Bg-DQK" firstAttribute="leading" secondItem="iDh-hL-POI" secondAttribute="leading" id="tIl-X2-d0p"/>
+                                    <constraint firstItem="cWv-Bg-DQK" firstAttribute="top" secondItem="iDh-hL-POI" secondAttribute="top" constant="5" id="vTY-vN-uZB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iDh-hL-POI" firstAttribute="leading" secondItem="xlB-fu-3cM" secondAttribute="leading" constant="15" id="cR4-SD-Ymy"/>
+                            <constraint firstItem="xlB-fu-3cM" firstAttribute="bottom" secondItem="iDh-hL-POI" secondAttribute="bottom" constant="15" id="ht1-0K-Emx"/>
+                            <constraint firstItem="xlB-fu-3cM" firstAttribute="trailing" secondItem="iDh-hL-POI" secondAttribute="trailing" constant="15" id="vWS-iP-mqt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xlB-fu-3cM"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="icd-hC-CQm" id="OE0-3v-M3Y"/>
+                        <outlet property="textViewBottomConstraint" destination="ht1-0K-Emx" id="W0J-XQ-zoG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6wp-tB-Upj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="116.49175412293854"/>
         </scene>
     </scenes>
     <resources>

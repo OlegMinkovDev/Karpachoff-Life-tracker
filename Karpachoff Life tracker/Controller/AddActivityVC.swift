@@ -10,7 +10,6 @@ import UIKit
 
 class AddActivityVC: UIViewController {
 
-    
     @IBOutlet weak var activityHeadImageView: UIImageView!
     @IBOutlet weak var startActivityButton: UIButton!
     @IBOutlet weak var activitySettingsView: UIView!
@@ -24,9 +23,11 @@ class AddActivityVC: UIViewController {
     
     var datePicker = UIDatePicker()
     var activeField: UITextField!
+    var popUpVC = PopUpVC()
     
     let screenSize = UIScreen.main.bounds
     var currentSelectedDate: String!
+    var activityRatingCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,26 +48,34 @@ class AddActivityVC: UIViewController {
     
     @IBAction func changeStartDatePress(_ sender: UIButton) {
         dateTextField.becomeFirstResponder()
-        //activeField = startDateTextField
     }
     
     @IBAction func changeTimePress(_ sender: UIButton) {
         startTimeTextField.becomeFirstResponder()
-        //activeField = timeTextField
     }
     
     @IBAction func changeDescriptionPress(_ sender: UIButton) {
+        performSegue(withIdentifier: "toPopUpVC", sender: self)
     }
     
     @IBAction func changeEndDatePress(_ sender: UIButton) {
         endTimeTextField.becomeFirstResponder()
-        //activeField = endDateTextField
     }
     
     @IBAction func addLikePress(_ sender: UIButton) {
+        
+        if activityRatingCount < 3 {
+            activityRatingCount += 1
+            setRatingTextAndColor(rating: activityRatingCount)
+        }
     }
     
     @IBAction func addDislikePress(_ sender: UIButton) {
+        
+        if activityRatingCount > -3 {
+            activityRatingCount -= 1
+            setRatingTextAndColor(rating: activityRatingCount)
+        }
     }
     
     @IBAction func startActivityPress(_ sender: UIButton) {
@@ -186,20 +195,6 @@ class AddActivityVC: UIViewController {
             startTimeTextField.text = currentSelectedDate
         }
         
-        /*if activeField == districtTextField {
-            districtTextField.text = pickerData[pickerSelectedIndex]
-            streetTextField.text = ""
-        } else if activeField == streetTextField {
-            streetTextField.text = pickerData[pickerSelectedIndex]
-        } else if activeField == derectionAppealTextField {
-            derectionAppealTextField.text = pickerData[pickerSelectedIndex]
-            eventTypeTextField.text = ""
-        } else if activeField == eventTypeTextField {
-            eventTypeTextField.text = pickerData[pickerSelectedIndex]
-        } else if activeField == appealTypeTextField {
-            appealTypeTextField.text = pickerData[pickerSelectedIndex]
-        }*/
-        
         hideKeyboards()
     }
     
@@ -232,23 +227,32 @@ class AddActivityVC: UIViewController {
         
         return dateFormatter.string(from: date)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setRatingTextAndColor(rating: Int) {
+        
+        if rating == 0 {
+            activityRatingLabel.text = "0"
+            activityRatingLabel.textColor = .black
+        } else if rating > 0 {
+            activityRatingLabel.text = "+\(rating)"
+            activityRatingLabel.textColor = .green
+        } else if rating < 0 {
+            activityRatingLabel.text = "\(rating)"
+            activityRatingLabel.textColor = .red
+        }
     }
     
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if let viewController = segue.destination as? PopUpVC {
+            viewController.completion = { [unowned self] text in
+                if text != "" {
+                    self.descriptionTextLabel.text = text
+                }
+            }
+        }
     }
-    */
-
 }
 
 extension AddActivityVC: OMSwitchDelegate {
