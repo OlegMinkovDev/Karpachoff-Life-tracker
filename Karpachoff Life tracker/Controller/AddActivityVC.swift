@@ -44,6 +44,7 @@ class AddActivityVC: UIViewController {
     }
     
     @IBAction func changeActivityPress(_ sender: UIButton) {
+        performSegue(withIdentifier: "toCategoryVC", sender: self)
     }
     
     @IBAction func changeStartDatePress(_ sender: UIButton) {
